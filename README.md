@@ -1,26 +1,36 @@
-# 🚀 AgileMaster - AI-Powered Agile Development Workflow
+# 🚀 SprintGenie - AI-Powered Agile Development Workflow
 
 [![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![OpenAI](https://img.shields.io/badge/OpenAI-Agents_SDK-green.svg)](https://github.com/openai/openai-agents-python)
-
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 Transform your Business Requirements Documents (BRD) into production-ready Python code automatically using AI agents!
 
+---
+
 ## ✨ Features
 
-- 🤖 **Multi-Agent System**: Three specialized AI agents working together
-  - **Decomposer Agent**: Breaks down BRDs into Epics, User Stories, and Tasks
-  - **Developer Agent**: Generates clean, documented Python code
-  - **Tester Agent**: Creates comprehensive unit tests
+### 🤖 Multi-Agent System
+Three specialized AI agents working together:
 
-- ⚡ **Concurrent Processing**: All tasks processed in parallel for maximum speed
-- 📁 **Organized Output**: Separate files for each task (code + tests)
-- 📊 **Complete Documentation**: Summary reports with explanations
-- 🎯 **Production Ready**: Professional code with type hints and best practices
+- **Decomposer Agent**: Breaks down BRDs into Epics, User Stories, and Tasks
+- **Developer Agent**: Generates clean, documented Python code
+- **Tester Agent**: Creates comprehensive unit tests
+
+### ⚡ Key Capabilities
+
+- **Concurrent Processing**: All tasks processed in parallel for maximum speed
+- **Organized Output**: Separate files for each task (code + tests)
+- **Complete Documentation**: Summary reports with explanations
+- **Production Ready**: Professional code with type hints and best practices
+- **Configurable**: Easy-to-modify agent instructions in config files
+
+---
 
 ## 🎬 Demo
 
 **Input:** Business Requirements Document
+
 ```
 Build a Task Management System
 
@@ -36,6 +46,7 @@ Features:
 ```
 
 **Output:** 6+ Python files
+
 ```
 generated_tasks/
 ├── task_01_user_registration.py
@@ -47,254 +58,348 @@ generated_tasks/
 └── workflow_summary.md
 ```
 
+---
+
 ## 🚀 Quick Start
 
 ### Prerequisites
 
 - Python 3.11+
-- OpenAI API Key
-- UV package manager
+- OpenAI API key
+- `uv` package manager (recommended) or `pip`
 
 ### Installation
 
+1. **Clone the repository:**
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/agilemaster.git
-cd agilemaster
+git clone https://github.com/RamyaGopalRao/Sprintgenie.git
+cd Sprintgenie
+```
 
-# Install dependencies
+2. **Install dependencies:**
+```bash
+# Using uv (recommended)
 uv sync
 
-# Set up environment variables
-echo "OPENAI_API_KEY=your-key-here" > .env
+# Or using pip
+pip install -r requirements.txt
 ```
 
-### Usage
+3. **Set up environment variables:**
+```bash
+# Create .env file
+echo "OPENAI_API_KEY=your-api-key-here" > .env
+```
 
-**Option 1: CLI Workflow (Recommended)**
+---
 
-1. Edit `agile_workflow.py` and update the BRD text (line ~170)
-2. Run the workflow:
+## 💻 Usage
+
+### Option 1: CLI Workflow (Recommended)
+
+**Interactive Mode:**
+```bash
+python agile_workflow.py
+```
+
+Enter your BRD when prompted, and the system will generate code + tests automatically.
+
+**File Input Mode:**
+```bash
+python agile_workflow_file.py sample_brd.txt
+```
+
+Use a text file containing your BRD.
+
+---
+
+### Option 2: Gradio Web Interface
+
+**Simple Interface:**
+```bash
+python gradio_simple_workflow.py
+```
+
+Then open http://localhost:7860 in your browser.
+
+**Features:**
+- ✅ User-friendly web interface
+- ✅ Real-time progress updates
+- ✅ Copy/paste BRD directly
+- ✅ Download generated files
+
+---
+
+### Option 3: File Upload Interface
 
 ```bash
-.venv/Scripts/python agile_workflow.py
+python gradio_file_upload.py
 ```
 
-3. Check `generated_tasks/` folder for output!
+Upload BRD as a text file through the web interface.
 
-**Option 2: File Input**
-
-```bash
-# Create your BRD file
-echo "Build your project here..." > my_project.txt
-
-# Run the workflow
-.venv/Scripts/python agile_workflow_file.py my_project.txt
-```
-
-## 📊 How It Works
-
-```mermaid
-graph TD
-    A[Business Requirements Document] --> B[Decomposer Agent]
-    B --> C[Tasks Identified]
-    C --> D1[Developer Agent Task 1]
-    C --> D2[Developer Agent Task 2]
-    C --> D3[Developer Agent Task 3]
-    D1 --> E1[Tester Agent Task 1]
-    D2 --> E2[Tester Agent Task 2]
-    D3 --> E3[Tester Agent Task 3]
-    E1 --> F[Generated Code + Tests]
-    E2 --> F
-    E3 --> F
-```
-
-**Workflow Steps:**
-1. **Decomposition** (10 sec): BRD → Epics, User Stories, Tasks
-2. **Development** (60-90 sec): Each task → Python code (parallel)
-3. **Testing** (60-90 sec): Each code → Unit tests (parallel)
-4. **Output**: Separate files + Summary report
-
-## 💡 Example Output
-
-### Code File: `task_01_user_registration.py`
-
-```python
-"""
-Task 1
-Epic: User Management
-User Story: As a user, I want to register...
-Task: Implement user registration functionality.
-"""
-
-def register_user(username, password, email):
-    """
-    Register a new user with validation.
-    
-    Args:
-        username: Unique username
-        password: User password (will be hashed)
-        email: Valid email address
-        
-    Returns:
-        Success or error message
-    """
-    # Implementation with validation
-    ...
-
-# Explanation:
-# This code provides secure user registration with...
-```
-
-### Test File: `test_task_01_user_registration.py`
-
-```python
-"""
-Unit Tests for Task 1
-Task: Implement user registration functionality.
-"""
-
-import unittest
-
-# Test Case 1: Valid registration
-def test_valid_registration():
-    result = register_user("john_doe", "secure123", "john@example.com")
-    assert result == "User successfully registered"
-
-# Test Case 2: Duplicate username
-def test_duplicate_username():
-    ...
-
-# Coverage Summary:
-# Tests cover registration, validation, error handling...
-```
+---
 
 ## 📁 Project Structure
 
 ```
 Agilepilot/
-├── agileagents/
-│   ├── decomposer_agent.py    # BRD decomposition
-│   ├── developer_agent.py     # Code generation
-│   └── tester_agent.py        # Test creation
-├── agile_workflow.py          # Main CLI workflow
-├── agile_workflow_file.py     # File input workflow
-├── developer_task_runner.py   # Simple test runner
-├── sample_brd.txt             # Example BRD
-├── generated_tasks/           # Output directory
-└── docs/                      # Documentation
+├── agileagents/                    # Core agent modules
+│   ├── decomposer_agent.py        # BRD decomposition agent
+│   ├── developer_agent.py         # Code generation agent
+│   └── tester_agent.py            # Test generation agent
+│
+├── config/                         # Agent configurations
+│   ├── decomposer_instructions.txt # Decomposer guidelines
+│   ├── developer_instructions.txt  # Developer guidelines
+│   ├── tester_instructions.txt     # Tester guidelines
+│   └── README.md                   # Config documentation
+│
+├── agile_workflow.py              # CLI workflow (interactive)
+├── agile_workflow_file.py         # CLI workflow (file input)
+├── gradio_simple_workflow.py      # Web UI (simple)
+├── gradio_file_upload.py          # Web UI (file upload)
+├── sample_brd.txt                 # Example BRD
+├── LICENSE                        # MIT License
+└── README.md                      # This file
 ```
 
-## ⚙️ Configuration
+---
 
-### Environment Variables
+## 🛠️ How It Works
 
-Create a `.env` file:
+### Workflow Pipeline
 
-```env
-OPENAI_API_KEY=your-api-key-here
+```mermaid
+graph LR
+    A[BRD Input] --> B[Decomposer Agent]
+    B --> C[Tasks/Stories]
+    C --> D[Developer Agent]
+    C --> E[Tester Agent]
+    D --> F[Python Code]
+    E --> G[Unit Tests]
+    F --> H[Output Files]
+    G --> H
 ```
 
-### Customize Agents
+### Step-by-Step Process
 
-Edit agent files in `agileagents/`:
+1. **Input:** User provides BRD (text or file)
+2. **Decomposition:** DecomposerAgent breaks BRD into:
+   - Epics (high-level features)
+   - User Stories (specific requirements)
+   - Tasks (implementable units)
 
-```python
-# agileagents/developer_agent.py
-developer_agent = Agent(
-    name="DeveloperAgent",
-    instructions="Write clean, documented Python code...",
-    model="gpt-4o",  # or "gpt-4o-mini" for faster/cheaper
-    output_type=DevelopmentResponse
-)
-```
+3. **Parallel Processing:**
+   - DeveloperAgent generates code for each task
+   - TesterAgent creates unit tests for each task
 
-## 📊 Performance
+4. **Output:** Organized files:
+   - `task_XX_name.py` - Implementation
+   - `test_task_XX_name.py` - Unit tests
+   - `workflow_summary.md` - Documentation
 
-| Project Size | Tasks | Time | Files Created |
-|--------------|-------|------|---------------|
-| Small        | 3-5   | ~2 min | 7-11 |
-| Medium       | 5-8   | ~3 min | 11-17 |
-| Large        | 8-12  | ~4 min | 17-25 |
-
-*All tasks processed in parallel for speed*
+---
 
 ## 🎯 Use Cases
 
 ### 1. Rapid Prototyping
-Quickly generate code from client requirements for demos
+Transform ideas into working code in minutes.
 
-### 2. Microservices Development
-Create individual service implementations with tests
+### 2. Code Generation
+Generate boilerplate code and tests automatically.
 
-### 3. Learning & Education
-Study well-structured code examples for different features
+### 3. Agile Development
+Accelerate sprint planning and task breakdown.
 
-### 4. Code Review
-Generate baseline implementations for comparison
+### 4. Learning Tool
+See how BRDs translate into actual code.
+
+### 5. Documentation
+Generate implementation guidelines from requirements.
+
+---
+
+## ⚙️ Configuration
+
+### Customizing Agent Behavior
+
+Edit instruction files in the `config/` directory:
+
+**`config/decomposer_instructions.txt`:**
+- Modify task breakdown strategy
+- Change epic/story structure
+- Adjust granularity
+
+**`config/developer_instructions.txt`:**
+- Set coding standards
+- Choose frameworks/libraries
+- Define documentation style
+
+**`config/tester_instructions.txt`:**
+- Configure test coverage requirements
+- Set testing frameworks
+- Define test patterns
+
+### Example: Change Code Style
+
+```bash
+# Edit developer instructions
+nano config/developer_instructions.txt
+
+# Add your preferred style guide
+# E.g., "Follow Google Python Style Guide"
+```
+
+---
+
+## 🎨 Example BRD
+
+See `sample_brd.txt` for a complete example:
+
+```text
+E-Learning Platform Requirements
+
+1. User Management
+   - Students can register and create profiles
+   - Instructors can apply and be approved
+   - Admin can manage all users
+
+2. Course Management
+   - Instructors can create and publish courses
+   - Courses have modules and lessons
+   - Support for video, text, and quiz content
+
+3. Enrollment & Progress
+   - Students can enroll in courses
+   - Track lesson completion
+   - Certificate generation on completion
+```
+
+**Run it:**
+```bash
+python agile_workflow_file.py sample_brd.txt
+```
+
+---
+
+## 📊 Performance
+
+- **Processing Time:** ~30-60 seconds per BRD (depends on complexity)
+- **Concurrent Tasks:** All tasks processed in parallel
+- **Output Quality:** Production-ready code with type hints and documentation
+- **Test Coverage:** Comprehensive unit tests for all functions
+
+---
 
 ## 🧪 Testing
 
-The system has been tested with:
-- ✅ E-commerce platforms (7 tasks, 15 files)
-- ✅ Authentication systems (3 tasks, 7 files)
-- ✅ CRUD operations (5 tasks, 11 files)
-- ✅ API services (4 tasks, 9 files)
+### Run the Test Suite
 
-## 📚 Documentation
+```bash
+# Test the workflow
+python test_workflow.py
 
-- **[Quick Start](docs/START_HERE.md)** - Get started in 3 steps
-- **[Complete Guide](docs/COMPLETE_SOLUTION.md)** - Full documentation
-- **[API Reference](docs/README.md)** - Detailed API docs
-- **[Examples](docs/QUICK_REFERENCE.md)** - Code examples
+# Test individual agents
+python -m pytest agileagents/
+```
 
-## 🤝 Contributing
+### Verify Installation
+
+```bash
+# Check dependencies
+uv pip list
+
+# Verify OpenAI API key
+python -c "import os; from dotenv import load_dotenv; load_dotenv(); print('API Key:', 'Set' if os.getenv('OPENAI_API_KEY') else 'Not Set')"
+```
+
+---
+
+## 🔧 Troubleshooting
+
+### Common Issues
+
+**1. Import Errors**
+```bash
+# Reinstall dependencies
+uv pip install --reinstall -r requirements.txt
+```
+
+**2. OpenAI API Errors**
+```bash
+# Check API key
+cat .env
+
+# Verify API key is valid
+# Visit: https://platform.openai.com/api-keys
+```
+
+**3. Gradio Not Starting**
+```bash
+# Check if port 7860 is available
+# Try different port
+python gradio_simple_workflow.py --port 7861
+```
+
+**4. Empty Output**
+- Ensure BRD is detailed enough
+- Check agent instructions in `config/`
+- Verify OpenAI API quota
+
+---
+
+## 📝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+### Development Setup
 
-## 🐛 Known Issues
+```bash
+# Clone the repo
+git clone https://github.com/RamyaGopalRao/Sprintgenie.git
+cd Sprintgenie
 
-- Gradio web interface has dependency conflicts (use CLI instead)
-- Large BRDs (>10,000 words) may take longer to process
-- Generated code should be reviewed before production use
+# Install dev dependencies
+uv pip install -e ".[dev]"
 
-## 🔮 Roadmap
+# Run tests
+pytest
 
-- [ ] Add code review agent
-- [ ] Implement database schema generation
-- [ ] Add API endpoint generation
-- [ ] Support for multiple languages (TypeScript, Java, etc.)
-- [ ] Integration with GitHub Actions
-- [ ] Web-based UI (Gradio/Streamlit)
+# Format code
+black .
+```
 
-## 📝 License
+---
+
+## 🔒 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+---
+
 ## 🙏 Acknowledgments
 
-- OpenAI for the Agents SDK
-- The open-source community
-- All contributors
+- **OpenAI** for the Agents SDK
+- The **open-source community**
+- All **contributors**
+
+---
 
 ## 📧 Contact
 
-- GitHub: [@RamyaGopalRao](https://github.com/RamyaGopalRao)
-- Email: ramyagopalrao@yahoo.co.in
+For questions or support, please open an issue on GitHub.
 
-## ⭐ Star History
+**GitHub Repository:** https://github.com/RamyaGopalRao/Sprintgenie
 
-If you find this project useful, please consider giving it a star!
+---
+
+## 🌟 Star History
+
+If you find this project useful, please consider giving it a star! ⭐
 
 ---
 
 **Built with ❤️ using OpenAI Agents SDK**
 
 Transform your ideas into code with AI-powered agile workflow! 🚀
-
