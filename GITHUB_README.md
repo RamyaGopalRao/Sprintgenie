@@ -1,10 +1,13 @@
-# 🚀 AgileMaster - AI-Powered Agile Development Workflow
+# 🚀 SprintGenie - AI-Powered Agile Development + Interview Prep Hub
 
 [![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![OpenAI](https://img.shields.io/badge/OpenAI-Agents_SDK-green.svg)](https://github.com/openai/openai-agents-python)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Interview Prep](https://img.shields.io/badge/Interview-16k%2B%20Lines-brightgreen.svg)](#)
 
-Transform your Business Requirements Documents (BRD) into production-ready Python code automatically using AI agents!
+**Two powerful tools in one repository:**
+1. 🤖 Transform BRDs into production-ready code using AI agents
+2. 📚 16,000+ lines of Tarento Technologies interview preparation materials
 
 ## ✨ Features
 
@@ -283,10 +286,54 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - The open-source community
 - All contributors
 
+## 📚 Interview Preparation Materials
+
+### Comprehensive Tarento Technologies Interview Guide
+
+This repository includes **16,211+ lines** of curated interview preparation content!
+
+#### 📋 Complete Index: [INDEX.md](INDEX.md)
+
+#### 🎯 Interview Resources:
+
+1. **[TARENTO_VS_UST_COMPARISON.md](TARENTO_VS_UST_COMPARISON.md)** (920 lines)
+   - Career comparison & interview process
+   - Compensation: ₹24-36 LPA
+
+2. **[TARENTO_BHASHINI_INTERVIEW_QUESTIONS.md](TARENTO_BHASHINI_INTERVIEW_QUESTIONS.md)** (3,033 lines)
+   - Bhashini 2.0 architecture
+   - API Marketplace & Partner Portal
+
+3. **[TARENTO_CODING_QUESTIONS.md](TARENTO_CODING_QUESTIONS.md)** (2,859 lines)
+   - Data structures & algorithms
+   - NLP & async programming
+
+4. **[PYTHON_ARCHITECT_QUESTIONS.md](PYTHON_ARCHITECT_QUESTIONS.md)** (3,069 lines)
+   - Architectural patterns
+   - System design scenarios
+
+5. **[ARCHITECT_INTERVIEW_QUESTIONS.md](ARCHITECT_INTERVIEW_QUESTIONS.md)** (2,737 lines)
+   - FastAPI & Airflow
+   - API best practices
+
+6. **[PYTHON_EVALUATION_SYSTEMS.md](PYTHON_EVALUATION_SYSTEMS.md)** (2,351 lines)
+   - AI/ML evaluation
+   - Testing frameworks
+
+7. **[DEPENDENCY_INJECTION_FASTAPI.md](DEPENDENCY_INJECTION_FASTAPI.md)** (1,242 lines)
+   - DI patterns
+   - Multi-tenant apps
+
+#### 📄 Convert to PDF:
+**[HOW_TO_CREATE_PDFS.md](HOW_TO_CREATE_PDFS.md)** - Easy conversion guide
+
+**Quick:** Run `open_for_pdf_conversion.bat` or use https://cloudconvert.com/md-to-pdf
+
+---
+
 ## 📧 Contact
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
+For questions or support, please open an issue on GitHub.
 
 ## ⭐ Star History
 
@@ -296,5 +343,5 @@ If you find this project useful, please consider giving it a star!
 
 **Built with ❤️ using OpenAI Agents SDK**
 
-Transform your ideas into code with AI-powered agile workflow! 🚀
+🚀 **Transform BRDs into code** + 📚 **Ace Tarento interviews** with 16k+ lines of prep material!
 
